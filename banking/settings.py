@@ -73,13 +73,13 @@ WSGI_APPLICATION = 'banking.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'defaul':{
-        'ENGINE': 'django.db.backends.sqlite3',
+    'default':{
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'banking',
         'USER': 'postgres',
         'PASSWORD': 'unicesmag',
         'HOST': 'localhost',
-        'PORT': '5432'
+        'PORT': '5433',
 
     },
     'local': {
