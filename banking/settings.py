@@ -11,6 +11,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from environs import Env 
+#Start env variables
+
+# Inicializa environ
+env = Env()
+# Lee el archivo .env (esto es opcional, pero muy recomendado)
+env.read_env()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,13 +84,24 @@ WSGI_APPLICATION = 'banking.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'banking',
-        'USER': 'postgres',
-        'PASSWORD': 'unicesmag',
-        'HOST': 'localhost',
-        'PORT': '5433',
+        'NAME': env('DB_name'),
+        'USER': env('DB_user'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST',default='localhost'),
+        'PORT': env('DB_PORT',default='5433'),
 
     },
+
+    'supabase':{
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+
+    },
+
     'local': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'banking.sqlite3',
