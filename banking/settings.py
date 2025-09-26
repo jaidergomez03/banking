@@ -94,11 +94,11 @@ DATABASES = {
 
     'supabase':{
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'NAME': env('SUPA_name'),
+        'USER': env('SUPA_USER'),
+        'PASSWORD': env('SUPA_PASS'),
+        'HOST': env('SUPA_HOST'),
+        'PORT': env('SUPA_PORT'),
 
     },
 

@@ -14,6 +14,10 @@ class Users(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
 
+    def _str_(self):
+        return f"{self.name} {self.abrev}"
+
+
 
 class Countries(models.Model):
     name = models.CharField(max_length=50)
@@ -21,6 +25,8 @@ class Countries(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def _str_(self):
+        return f"{self.name} {self.abrev}"
 
 class Departments(models.Model):
     name = models.CharField(max_length=50)
@@ -30,6 +36,9 @@ class Departments(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
 
+    def _str_(self):
+        return f"{self.name} {self.abrev}"
+
 
 class Cities(models.Model):
     name = models.CharField(max_length=50)
@@ -37,6 +46,9 @@ class Cities(models.Model):
     id_department = models.ForeignKey("Departments", on_delete=models.CASCADE, null=True, blank=True, related_name="cities")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def _str_(self):
+        return f"{self.name} {self.abrev}"
 
 
 
