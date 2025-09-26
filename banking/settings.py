@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+# settings.py
 from pathlib import Path
 from environs import Env 
 #Start env variables
@@ -18,7 +19,6 @@ from environs import Env
 env = Env()
 # Lee el archivo .env (esto es opcional, pero muy recomendado)
 env.read_env()
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,6 +82,7 @@ WSGI_APPLICATION = 'banking.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
+    
     'default':{
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': env('DB_name'),
