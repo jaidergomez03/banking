@@ -14,8 +14,8 @@ class Users(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
 
-    def _str_(self):
-        return f"{self.name} {self.abrev}"
+    def __str__(self):
+        return f"{self.name} {self.abrev} {self.status}"
 
 
 
@@ -25,7 +25,7 @@ class Countries(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def _str_(self):
+    def __str__(self):
         return f"{self.name} {self.abrev}"
 
 class Departments(models.Model):
@@ -36,7 +36,7 @@ class Departments(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
 
-    def _str_(self):
+    def __str__(self):
         return f"{self.name} {self.abrev}"
 
 
@@ -47,7 +47,7 @@ class Cities(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def _str_(self):
+    def __str__(self):
         return f"{self.name} {self.abrev}"
 
 
