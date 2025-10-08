@@ -1,19 +1,13 @@
-
 from django.contrib import admin
-from .models import Country,Department,City,User # Importando tus modelos
+from.models import Country,Department,City, User
 # Register your models here.
-#admin.site.register(Countries)
-#admin.site.register(Departments)
-#admin.site.register(Cities)
-#admin.site.register(Users)
+#aqui van tablas en donde se vana ingresar datos.
+#vamos a importar los modelos 
+#model viene del archivo model.py 
 
-@admin.register(Country)
-class CountryAdmin(admin.ModelAdmin):
-    display_data= ('name', 'abrev', 'get_status')
-    list_filter= ()  # or other fields that exist, e.g. ('name',)
-    search_fields= ('name', 'abrev')
-    ordering= ('id',)
 
-    def get_status(self, obj):
-        return 'Active' if obj.status==True else 'Inactive'
-    get_status.short_description = 'Status'
+#ahora vamos a registrar el que queremos que salga con interfax grafica.
+admin.site.register(Country)
+admin.site.register(Department)
+admin.site.register(City)
+admin.site.register(User)   

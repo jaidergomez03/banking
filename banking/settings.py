@@ -77,6 +77,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'banking.wsgi.application'
 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static'] # carpeta para css/js
+STATIC_ROOT = BASE_DIR / 'staticfiles' # para collectstatic en producción
+
+
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -145,8 +150,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']  # Correcto, apunta a la carpeta static al nivel raíz
-STATIC_ROOT = BASE_DIR / 'staticfiles'    # Correcto para collectstatic
 
 
 # Default primary key field type
